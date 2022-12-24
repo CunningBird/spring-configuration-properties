@@ -6,7 +6,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "template-spring"
-
-// TODO build slim jar
-// TODO optimize image build
+rootProject.name = "utka-gateway"

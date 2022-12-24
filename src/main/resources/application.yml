@@ -1,2 +1,42 @@
-server:
-    port: ${SPRING_APPLICATION_PORT}
+utka-gateway:
+  clients:
+    client1:
+      address: 192.168.1.1
+      virtual-host: /
+      username: admin
+      password: password
+      queues:
+        queue1: # asunc queue
+          inbound: q1-in
+          outbound: q1-out
+          route: flex1, flex2, flex3
+    client2:
+      address: 192.168.2.2
+      virtual-host: /
+      username: admin
+      password: password
+      queues:
+        queue1: # asunc queue
+          inbound: q1-in
+          outbound: q1-out
+          route: flex1, flex2, flex3
+        queue2:
+          inbound: q2-in # sync queue (reply-to)
+          route: gachi1, gachi2, gachi3
+    client3:
+      address: 192.168.1.1
+      virtual-host: /
+      username: admin
+      password: password
+      queues:
+        queue1: # asunc queue
+          inbound: q1-in
+          outbound: q1-out
+          route: flex1, flex2, flex3
+        queue2:
+          inbound: q2-in # sync queue (reply-to)
+          route: gachi1, gachi2, gachi3
+        queue3: # asunc queue
+          inbound: q3-in
+          outbound: q3-out
+          route: van1, van2, van3

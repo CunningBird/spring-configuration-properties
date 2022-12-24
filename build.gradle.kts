@@ -22,8 +22,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    // Web
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    // Spring
+    implementation("org.springframework.boot:spring-boot-starter")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
